@@ -1,6 +1,4 @@
-// Global Variables
-// let playerScore = 0;
-// let compScore = 0;
+
 
 // Second get player input or choice of rock paper scissors.
 const playerSelection = prompt('rock, paper or scissors?')
@@ -16,9 +14,16 @@ function getComputerChoice (){
     return compChoice;
 }
 
+// function getTotalScore() {
+    // let playerScore = 0;
+    // let compScore = 0;
+// }
+
 // Game Logic
 function playRound(getComputerChoice, playerSelection) {
     let compChoice = getComputerChoice();
+    let playerScore = 0;
+    let compScore = 0;
 
     if (playerSelection == 'rock') {
         if (compChoice == 'paper') {
@@ -69,7 +74,11 @@ function playRound(getComputerChoice, playerSelection) {
             console.log("Draw!, Scissors can't cut Scissors!")
         }
     }
+    console.log("Computer TotalScore:", compScore);
+    console.log("Your Total point is:", playerScore);
 }
+
+playRound(getComputerChoice, playerSelection)
 
 
 // function playGame() {
