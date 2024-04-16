@@ -3,6 +3,20 @@
 let playerScore = 0;
 let computerScore = 0;
 
+// get player input or choice of rock paper scissors.
+const rock = document.querySelector('.player-rock')
+const paper = document.querySelector('#playerPaper')
+const scissors = document.querySelector('#playerScissors')
+
+
+// computer choice input of rock paper scissors
+function getComputerChoice (){
+    const choices = [ 'rock', 'paper', 'scissors'];
+
+    let randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
+}
+
 // Game Logic
 function playRound(compChoice, playerSelection) {
 
@@ -57,77 +71,97 @@ function playRound(compChoice, playerSelection) {
     }
 }
 
-//  Game Run
-function playGame() {
-        if (computerScore <= 0 && playerScore <= 0) {
-            for (let i = 1; i <= 5; i++) {
-                console.log(i);
-                // get player input or choice of rock paper scissors.
-                const playerSelection = prompt('rock, paper or scissors?')
+// Run Game by the click of a button
+// ROCK
+rock.addEventListener("click", () => {
+    playerSelection = 'rock';
+    let compChoice = getComputerChoice();
+    playRound(compChoice, playerSelection);
+    console.log(playerScore);
+    console.log(computerScore);
+    console.log('rock');
+} )
 
-                // computer choice input of rock paper scissors
-                function getComputerChoice (){
-                    const choices = [ 'rock', 'paper', 'scissors'];
-                    
-                    let randomIndex = Math.floor(Math.random() * choices.length);
-                    return choices[randomIndex];
-                }
-                // computer choice of rock paper scissors stored in the compChoice variable
-                let compChoice = getComputerChoice();
+// PAPER
+paper.addEventListener('click', () => {
+    playerSelection = 'paper';
+    let compChoice = getComputerChoice();
+    playRound(compChoice, playerSelection);
+    console.log(playerScore);
+    console.log(computerScore);
+    console.log('paper');
+})
+
+// SCISSORS
+scissors.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    let compChoice = getComputerChoice();
+    playRound(compChoice, playerSelection);
+    console.log(playerScore);
+    console.log(computerScore);
+    console.log('scissors');
+})
+
+
+//  Game Run
+// function playGame() {
+//         if (computerScore <= 0 && playerScore <= 0) {
+//             for (let i = 1; i <= 5; i++) {
+//                 console.log(i);
+
+//                 // run the game
+//                 playRound(compChoice, playerSelection);
+//                 // print game scores
+//                 console.log("Your Score: ", playerScore);
+//                 console.log("Computer Score: ", computerScore);
                 
-                // run the game
-                playRound(compChoice, playerSelection);
-                // print game scores
-                console.log("Your Score: ", playerScore);
-                console.log("Computer Score: ", computerScore);
+//                 // check game scores for winner
+//                 if (computerScore === 3) {
+//                     if (i === 5) {
+//                         console.log("Game Over Computer Wins!");
+//                         console.log("Computer Score: " + computerScore)
+//                         console.log("Player Score: " + playerScore)
+//                         break
+//                     } else if (i < 5) {
+//                         console.log("Game Over Computer Wins!");
+//                         console.log("Computer Score: " + computerScore)
+//                         console.log("Player Score: " + playerScore)
+//                         break
+//                     }
+//                 } else if (playerScore === 3) {
+//                     if (i === 5) {
+//                         console.log("You've Won!");
+//                         console.log("Player Score: " + playerScore)
+//                         console.log("Computer Score: " + computerScore)
+//                         break
+//                     } else if (i < 5) {
+//                         console.log("You've Won!");
+//                         console.log("Player Score: " + playerScore)
+//                         console.log("Computer Score: " + computerScore)
+//                         break
+//                     }
+//                 } else if (computerScore < 3 && i === 5) {
+//                     if (computerScore > playerScore) {
+//                         console.log("Game Over Computer Wins!")
+//                         console.log("Computer Score: " + computerScore)
+//                         console.log("Player Score: " + playerScore)
+//                         break
+//                     }
+//                 } else if (playerScore < 3 && i === 5) {
+//                     if (playerScore > computerScore) {
+//                         console.log("You've Won!");
+//                         console.log("Player Score: " + playerScore)
+//                         console.log("Computer Score: " + computerScore)
+//                         break
+//                     } else if (playerScore === computerScore && i === 5) {
+//                         console.log("Game Draw!");
+//                     }
+//                 }
                 
-                // check game scores for winner
-                if (computerScore === 3) {
-                    if (i === 5) {
-                        console.log("Game Over Computer Wins!");
-                        console.log("Computer Score: " + computerScore)
-                        console.log("Player Score: " + playerScore)
-                        break
-                    } else if (i < 5) {
-                        console.log("Game Over Computer Wins!");
-                        console.log("Computer Score: " + computerScore)
-                        console.log("Player Score: " + playerScore)
-                        break
-                    }
-                } else if (playerScore === 3) {
-                    if (i === 5) {
-                        console.log("You've Won!");
-                        console.log("Player Score: " + playerScore)
-                        console.log("Computer Score: " + computerScore)
-                        break
-                    } else if (i < 5) {
-                        console.log("You've Won!");
-                        console.log("Player Score: " + playerScore)
-                        console.log("Computer Score: " + computerScore)
-                        break
-                    }
-                } else if (computerScore < 3 && i === 5) {
-                    if (computerScore > playerScore) {
-                        console.log("Game Over Computer Wins!")
-                        console.log("Computer Score: " + computerScore)
-                        console.log("Player Score: " + playerScore)
-                        break
-                    }
-                } else if (playerScore < 3 && i === 5) {
-                    if (playerScore > computerScore) {
-                        console.log("You've Won!");
-                        console.log("Player Score: " + playerScore)
-                        console.log("Computer Score: " + computerScore)
-                        break
-                    } else if (playerScore === computerScore && i === 5) {
-                        console.log("Game Draw!");
-                    }
-                }
-                
-            }
+//             }
             
-        }
-};
+//         }
+// };
 
 // Invoke the game / Run the game
-playGame();
+// playGame();
