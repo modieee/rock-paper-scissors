@@ -1,10 +1,19 @@
+/* * {
+    outline: 1px solid red;
+} */
+
 body {
     display: flex;
     justify-content: center;
+    height: 100vh;
 }
+
 .container {
     align-items: center;
-    margin: 100px;
+    /* margin: 75px; */
+    width: 600px;
+    border: 2px solid burlywood;
+    padding: 20px;
 }
 .computer {
     display: flex;
@@ -14,6 +23,36 @@ body {
 }
 .comp-list {
     border: 2px solid black;
-    padding: 60px;
+    padding: 50px;
     border-radius: 50%;
+}
+.scores_deets {
+    /* margin: 250px 0; */
+}
+
+.player {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center
+}
+.player-paper {
+    margin: 0 50px;
+}
+
+button {
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: darkgray;
+    color: #FFF;
+}
+
+.player_score, .comp_score {
+    border: 1px solid red;
+    width: 150px;
+    padding: 10px;
 }

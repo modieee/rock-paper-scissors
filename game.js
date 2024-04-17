@@ -77,9 +77,17 @@ rock.addEventListener("click", () => {
     playerSelection = 'rock';
     let compChoice = getComputerChoice();
     playRound(compChoice, playerSelection);
-    console.log(playerScore);
+    
+    // Display player score to web
+    let player_score = document.querySelector('.player_score');
+    player_score.textContent = playerScore
+    
+    // Display computer score to web
     console.log(computerScore);
-    console.log('rock');
+    let comp_score = document.querySelector('.comp_score');
+    comp_score.textContent = computerScore;
+    
+    // console.log('rock');
 } )
 
 // PAPER
@@ -87,9 +95,17 @@ paper.addEventListener('click', () => {
     playerSelection = 'paper';
     let compChoice = getComputerChoice();
     playRound(compChoice, playerSelection);
-    console.log(playerScore);
+
+    // Display player score to web
+    let player_score = document.querySelector('.player_score');
+    player_score.textContent = playerScore
+    
+    // Display computer score to web
     console.log(computerScore);
-    console.log('paper');
+    let comp_score = document.querySelector('.comp_score');
+    comp_score.textContent = computerScore;
+    
+    // console.log('paper');
 })
 
 // SCISSORS
@@ -97,9 +113,17 @@ scissors.addEventListener('click', () => {
     playerSelection = 'scissors';
     let compChoice = getComputerChoice();
     playRound(compChoice, playerSelection);
-    console.log(playerScore);
+    
+    // Display player score to web
+    let player_score = document.querySelector('.player_score');
+    player_score.textContent = playerScore
+    
+    // Display computer score to web
     console.log(computerScore);
-    console.log('scissors');
+    let comp_score = document.querySelector('.comp_score');
+    comp_score.textContent = computerScore
+    
+    // console.log('scissors');
 })
 
 
